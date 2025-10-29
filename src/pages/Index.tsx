@@ -4,6 +4,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
+import Calculator from '@/components/Calculator';
 
 const Index = () => {
   const { toast } = useToast();
@@ -182,17 +183,7 @@ const Index = () => {
         </div>
       </section>
 
-      <section className="max-w-[1000px] mx-auto px-5 md:px-10 py-20">
-        <div className="bg-gradient-to-br from-[#eaeaea] to-white rounded-[30px] p-10 md:p-16 text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium leading-tight tracking-[-0.05em] mb-4">
-            Рассчитайте стоимость съёмки
-          </h2>
-          <p className="text-base md:text-lg mb-8">Выберите событие и услуги — и получите точную цену онлайн</p>
-          <button className="px-10 py-3 md:px-12 md:py-4 text-sm md:text-base tracking-[0.03em] uppercase bg-foreground text-white rounded-full hover:opacity-90 transition-opacity">
-            Открыть калькулятор
-          </button>
-        </div>
-      </section>
+      <Calculator />
 
       <section id="reviews" className="max-w-[1100px] mx-auto px-5 md:px-10 py-20">
         <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-center leading-tight tracking-[-0.05em] mb-12">
