@@ -1,17 +1,8 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
-import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from '@/components/ui/carousel';
 import { useToast } from '@/hooks/use-toast';
 
 const Index = () => {
@@ -33,328 +24,261 @@ const Index = () => {
 
   const features = [
     {
-      icon: 'Camera',
       title: 'Профессиональная техника',
       description:
         'Использую камеры, объективы и свет, которые позволяют создавать кадры кинематографического качества',
+      image: 'https://cdn.poehali.dev/projects/aa373c5d-333e-4487-a701-360cb774cae5/files/fa0a644e-9f79-4c37-8b97-3dd382f24b03.jpg',
     },
     {
-      icon: 'Heart',
       title: 'Живые эмоции',
       description:
         'Главное для меня — естественность. Не постановка, а настоящие моменты, которые будут дороги вам',
+      image: 'https://cdn.poehali.dev/projects/aa373c5d-333e-4487-a701-360cb774cae5/files/101fa8b8-f0f5-4352-8f66-17fc83a65884.jpg',
     },
     {
-      icon: 'Zap',
       title: 'Быстрая обработка',
       description:
         'Вы получите готовые фото и видео в кратчайшие сроки, без потери качества и с авторской цветокоррекцией',
+      image: 'https://cdn.poehali.dev/projects/aa373c5d-333e-4487-a701-360cb774cae5/files/431759a5-78bf-4556-8a84-f640ec815f2b.jpg',
     },
     {
-      icon: 'Sparkles',
       title: 'Индивидуальный подход',
       description:
         'Каждый проект уникален: я учитываю ваши идеи, стиль и атмосферу, чтобы результат был именно вашим',
+      image: 'https://cdn.poehali.dev/projects/aa373c5d-333e-4487-a701-360cb774cae5/files/fa0a644e-9f79-4c37-8b97-3dd382f24b03.jpg',
     },
   ];
 
   const reviews = [
     {
       name: 'Анна',
-      avatar: '👩',
       text: 'Съёмка прошла очень легко и непринуждённо. Евгений помог с позами, а результат превзошёл ожидания!',
     },
     {
       name: 'Дмитрий',
-      avatar: '👨',
       text: 'Фотографии получились живыми и атмосферными. Видно, что работает профессионал, который любит своё дело',
     },
     {
       name: 'Ольга',
-      avatar: '👩‍🦰',
       text: 'Благодарим за свадебное видео! Каждый раз пересматриваем с улыбкой, как будто снова проживаем этот день',
     },
   ];
 
-  const portfolioImages = [
-    'https://cdn.poehali.dev/projects/aa373c5d-333e-4487-a701-360cb774cae5/files/fa0a644e-9f79-4c37-8b97-3dd382f24b03.jpg',
-    'https://cdn.poehali.dev/projects/aa373c5d-333e-4487-a701-360cb774cae5/files/101fa8b8-f0f5-4352-8f66-17fc83a65884.jpg',
-    'https://cdn.poehali.dev/projects/aa373c5d-333e-4487-a701-360cb774cae5/files/431759a5-78bf-4556-8a84-f640ec815f2b.jpg',
-  ];
+  const heroImage = 'https://cdn.poehali.dev/projects/aa373c5d-333e-4487-a701-360cb774cae5/files/fa0a644e-9f79-4c37-8b97-3dd382f24b03.jpg';
 
   return (
-    <div className="min-h-screen">
-      <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-        <div className="container flex h-16 items-center justify-between">
-          <div className="flex items-center space-x-2">
-            <Icon name="Aperture" size={32} className="text-primary" />
-            <span className="font-heading text-xl font-bold">Евгений Остапенко</span>
+    <div className="min-h-screen bg-[#f5f5f5]">
+      <header className="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-sm border-b border-[#2526311a]">
+        <div className="max-w-[1440px] mx-auto px-5 md:px-10 lg:px-20 h-20 flex items-center justify-between">
+          <div className="flex flex-col items-center gap-1">
+            <div className="h-px w-24 bg-foreground/20"></div>
+            <div className="text-sm font-medium tracking-[0.3em] uppercase">Евгений Остапенко</div>
+            <div className="h-px w-16 bg-foreground/20"></div>
           </div>
-          <nav className="hidden md:flex items-center space-x-8">
-            <a href="#about" className="text-sm font-medium hover:text-primary transition-colors">
+
+          <nav className="hidden lg:flex items-center gap-8">
+            <a
+              href="#about"
+              className="text-[10px] font-medium tracking-[0.03em] uppercase px-2 py-1 border-b border-foreground hover:opacity-60 transition-opacity"
+            >
               Главная
             </a>
-            <a href="#portfolio" className="text-sm font-medium hover:text-primary transition-colors">
+            <a
+              href="#portfolio"
+              className="text-[10px] font-medium tracking-[0.03em] uppercase px-2 py-1 hover:border-b hover:border-foreground transition-all"
+            >
               Работы
             </a>
-            <a href="#reviews" className="text-sm font-medium hover:text-primary transition-colors">
+            <a
+              href="#reviews"
+              className="text-[10px] font-medium tracking-[0.03em] uppercase px-2 py-1 hover:border-b hover:border-foreground transition-all"
+            >
               Отзывы
             </a>
-            <a href="#contact" className="text-sm font-medium hover:text-primary transition-colors">
+            <a
+              href="#contact"
+              className="text-[10px] font-medium tracking-[0.03em] uppercase px-2 py-1 hover:border-b hover:border-foreground transition-all"
+            >
               Контакты
             </a>
           </nav>
-          <Button>Оставить заявку</Button>
+
+          <button className="lg:hidden">
+            <Icon name="Menu" size={24} />
+          </button>
+
+          <button className="hidden lg:block px-6 py-2 text-xs tracking-[0.03em] uppercase border border-foreground rounded-full hover:bg-foreground hover:text-white transition-all">
+            Оставить заявку
+          </button>
         </div>
       </header>
 
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${portfolioImages[0]})`,
-            filter: 'brightness(0.4)',
-          }}
-        />
-        <div className="relative z-10 text-center text-white px-4 animate-fade-in">
-          <Badge className="mb-4" variant="secondary">
-            Фотограф и Видеограф
-          </Badge>
-          <h1 className="font-heading text-5xl md:text-7xl font-bold mb-6">
-            Не просто кадры,
-            <br />а истории с эмоциями
-          </h1>
-          <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto text-gray-200">
-            Создаю живые фотографии и кинематографичные видеоролики в Санкт-Петербурге
+      <section
+        className="relative h-[90vh] mt-20 bg-cover bg-center"
+        style={{ backgroundImage: `url(${heroImage})` }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#f5f5f5]/80"></div>
+      </section>
+
+      <section id="about" className="max-w-[1000px] mx-auto px-5 md:px-10 py-20">
+        <h1 className="text-4xl md:text-5xl lg:text-[62px] font-medium text-center leading-tight tracking-[-0.05em] mb-5">
+          Не просто кадры, а истории с эмоциями
+        </h1>
+        <p className="text-base md:text-lg text-center mb-5">
+          Создаю живые фотографии и кинематографичные видеоролики в Санкт-Петербурге
+        </p>
+        <p className="text-sm md:text-base text-muted-foreground text-center">
+          Со мной фотосессия становится лёгким и вдохновляющим процессом, в котором вы будете чувствовать себя
+          свободно и естественно
+        </p>
+        <div className="mt-10 p-8 bg-gradient-to-br from-[#eaeaea] to-white rounded-[30px] text-center">
+          <p className="text-sm md:text-base font-medium">
+            🎁 При заказе фотосессии вы получаете небольшой видеоролик в подарок — тот самый ценный бонус, который
+            поможет прожить эти моменты снова и снова.
           </p>
-          <Button size="lg" className="text-lg px-8">
-            Заказать съёмку
-          </Button>
         </div>
       </section>
 
-      <section id="about" className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">О моём подходе</h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              «Я создаю живые фотографии и кинематографичные видеоролики, которые помогают сохранить
-              настоящие чувства и важные моменты. В моей работе нет случайных кадров — каждый из них
-              наполнен атмосферой, светом и душой».
-            </p>
-            <p className="text-lg text-muted-foreground leading-relaxed mt-4">
-              Со мной фотосессия становится лёгким и вдохновляющим процессом, в котором вы будете
-              чувствовать себя свободно и естественно. Ведь только так рождаются настоящие и искренние
-              кадры, в которых отражается ваша история.
-            </p>
-            <div className="mt-8 p-6 bg-primary/10 rounded-lg border border-primary/20">
-              <p className="text-base font-medium">
-                🎁 При заказе фотосессии вы получаете небольшой видеоролик в подарок — тот самый
-                ценный бонус, который поможет прожить эти моменты снова и снова.
-              </p>
+      <section className="max-w-[1000px] mx-auto px-5 md:px-10 py-20">
+        <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-center leading-tight tracking-[-0.05em] mb-12">
+          Почему выбирают меня
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+          {features.map((feature, index) => (
+            <div
+              key={index}
+              className="relative h-64 rounded-[20px] md:rounded-[30px] overflow-hidden bg-gradient-to-br from-[#eaeaea] to-white p-8"
+            >
+              <div className="relative z-10">
+                <h3 className="text-lg md:text-xl font-medium mb-3">{feature.title}</h3>
+                <p className="text-sm md:text-base text-muted-foreground max-w-[60%]">{feature.description}</p>
+              </div>
+              <img
+                src={feature.image}
+                alt={feature.title}
+                className="absolute right-0 bottom-0 h-40 md:h-44 w-auto object-cover opacity-60"
+              />
             </div>
-          </div>
+          ))}
         </div>
       </section>
 
-      <section className="py-20">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">Почему выбирают меня</h2>
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Каждая съёмка — это не только результат, но и опыт, который должен быть лёгким и приятным
-              для вас
-            </p>
-          </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {features.map((feature, index) => (
-              <Card
-                key={index}
-                className="border-2 hover:border-primary transition-all duration-300 hover:shadow-lg animate-scale-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="pt-8 text-center">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mx-auto mb-4">
-                    <Icon name={feature.icon as any} size={32} className="text-primary" />
-                  </div>
-                  <h3 className="font-heading text-xl font-semibold mb-3">{feature.title}</h3>
-                  <p className="text-muted-foreground">{feature.description}</p>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
+      <section id="portfolio" className="max-w-[1000px] mx-auto px-5 md:px-10 py-20">
+        <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-center leading-tight tracking-[-0.05em] mb-12">
+          Мои работы
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3">
+          <div className="rounded-[20px] overflow-hidden h-64 bg-gray-200"></div>
+          <div className="rounded-[20px] overflow-hidden h-64 bg-gray-300"></div>
+          <div className="rounded-[20px] overflow-hidden h-64 bg-gray-200"></div>
+          <div className="rounded-[20px] overflow-hidden h-64 bg-gray-300"></div>
+          <div className="rounded-[20px] overflow-hidden h-64 bg-gray-200"></div>
+          <div className="rounded-[20px] overflow-hidden h-64 bg-gray-300"></div>
+        </div>
+        <div className="flex justify-center gap-2 mt-8">
+          <div className="w-2.5 h-2.5 rounded-full bg-foreground"></div>
+          <div className="w-1.5 h-1.5 rounded-full bg-foreground/20"></div>
+          <div className="w-1.5 h-1.5 rounded-full bg-foreground/20"></div>
         </div>
       </section>
 
-      <section id="portfolio" className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">Мои работы</h2>
-            <p className="text-lg text-muted-foreground">
-              Примеры недавних съёмок и проектов
-            </p>
-          </div>
-          <div className="max-w-5xl mx-auto">
-            <Carousel className="w-full">
-              <CarouselContent>
-                {portfolioImages.map((image, index) => (
-                  <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-                    <Card className="overflow-hidden group cursor-pointer">
-                      <div className="aspect-[4/5] overflow-hidden">
-                        <img
-                          src={image}
-                          alt={`Работа ${index + 1}`}
-                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                        />
-                      </div>
-                    </Card>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious />
-              <CarouselNext />
-            </Carousel>
-          </div>
-        </div>
-      </section>
-
-      <section className="py-20 bg-primary text-white">
-        <div className="container text-center">
-          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-6">
+      <section className="max-w-[1000px] mx-auto px-5 md:px-10 py-20">
+        <div className="bg-gradient-to-br from-[#eaeaea] to-white rounded-[30px] p-10 md:p-16 text-center">
+          <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium leading-tight tracking-[-0.05em] mb-4">
             Рассчитайте стоимость съёмки
           </h2>
-          <p className="text-xl mb-8 opacity-90">
-            Выберите событие и услуги — и получите точную цену онлайн
-          </p>
-          <Button size="lg" variant="secondary" className="text-lg px-8">
+          <p className="text-base md:text-lg mb-8">Выберите событие и услуги — и получите точную цену онлайн</p>
+          <button className="px-10 py-3 md:px-12 md:py-4 text-sm md:text-base tracking-[0.03em] uppercase bg-foreground text-white rounded-full hover:opacity-90 transition-opacity">
             Открыть калькулятор
-          </Button>
+          </button>
         </div>
       </section>
 
-      <section id="reviews" className="py-20">
-        <div className="container">
-          <div className="text-center mb-16">
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">
-              Отзывы наших клиентов
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Спасибо за доверие и за то, что выбираете меня
-            </p>
+      <section id="reviews" className="max-w-[1100px] mx-auto px-5 md:px-10 py-20">
+        <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-center leading-tight tracking-[-0.05em] mb-12">
+          Отзывы наших клиентов
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {reviews.map((review, index) => (
+            <div key={index} className="flex flex-col items-center text-center">
+              <div className="w-28 md:w-36 h-28 md:h-36 rounded-full bg-gray-300 mb-8"></div>
+              <h3 className="text-lg md:text-xl font-medium mb-2">{review.name}</h3>
+              <p className="text-sm md:text-base text-muted-foreground">{review.text}</p>
+            </div>
+          ))}
+        </div>
+        <div className="text-center mt-12">
+          <button className="px-10 py-3 md:px-12 md:py-4 text-sm md:text-base tracking-[0.03em] uppercase bg-foreground text-white rounded-full hover:opacity-90 transition-opacity">
+            Смотреть все отзывы
+          </button>
+        </div>
+      </section>
+
+      <section id="contact" className="max-w-[685px] mx-auto px-5 md:px-10 py-20">
+        <h2 className="text-3xl md:text-4xl lg:text-[52px] font-medium text-center leading-tight tracking-[-0.05em] mb-12">
+          Форма обратной связи
+        </h2>
+        <form onSubmit={handleSubmit} className="space-y-8">
+          <div className="relative">
+            <Input
+              id="name"
+              value={formData.name}
+              onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+              placeholder="Ваше имя"
+              required
+              className="border-0 border-b border-muted-foreground/30 rounded-none bg-transparent px-0 py-5 text-sm placeholder:opacity-50 focus-visible:ring-0 focus-visible:border-foreground"
+            />
           </div>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {reviews.map((review, index) => (
-              <Card
-                key={index}
-                className="animate-slide-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <CardContent className="pt-8">
-                  <div className="flex items-center mb-4">
-                    <div className="text-4xl mr-4">{review.avatar}</div>
-                    <div>
-                      <h3 className="font-heading font-semibold text-lg">{review.name}</h3>
-                      <div className="flex text-yellow-500">
-                        {'★'.repeat(5)}
-                      </div>
-                    </div>
-                  </div>
-                  <p className="text-muted-foreground">{review.text}</p>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="relative">
+            <Input
+              id="email"
+              type="email"
+              value={formData.email}
+              onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+              placeholder="E-mail"
+              required
+              className="border-0 border-b border-muted-foreground/30 rounded-none bg-transparent px-0 py-5 text-sm placeholder:opacity-50 focus-visible:ring-0 focus-visible:border-foreground"
+            />
           </div>
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg">
-              Смотреть все отзывы
+          <div className="relative">
+            <Textarea
+              id="message"
+              value={formData.message}
+              onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+              placeholder="Можете сразу указать желаемую дату съемки"
+              rows={5}
+              required
+              className="border-0 border-b border-muted-foreground/30 rounded-none bg-transparent px-0 py-5 text-sm placeholder:opacity-50 focus-visible:ring-0 focus-visible:border-foreground resize-none"
+            />
+          </div>
+          <div className="text-center pt-6">
+            <Button
+              type="submit"
+              className="px-12 py-6 text-sm tracking-[0.03em] uppercase rounded-full"
+            >
+              Отправить
             </Button>
           </div>
-        </div>
+        </form>
       </section>
 
-      <section id="contact" className="py-20 bg-muted/30">
-        <div className="container">
-          <div className="max-w-2xl mx-auto">
-            <div className="text-center mb-12">
-              <h2 className="font-heading text-4xl md:text-5xl font-bold mb-4">
-                Форма обратной связи
-              </h2>
-              <p className="text-lg text-muted-foreground">
-                Давайте создадим вместе — напишите, что хотите сохранить на фото или видео
-              </p>
-            </div>
-            <Card>
-              <CardContent className="pt-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">
-                      Ваше имя
-                    </label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Введите ваше имя"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">
-                      E-mail
-                    </label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="your@email.com"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">
-                      Ваше сообщение
-                    </label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Можете сразу указать желаемую дату съемки"
-                      rows={5}
-                      required
-                    />
-                  </div>
-                  <Button type="submit" size="lg" className="w-full">
-                    Отправить
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+      <footer className="max-w-[1440px] mx-auto px-5 md:px-10 lg:px-20 py-12 border-t border-[#2526311a]">
+        <div className="flex flex-col items-center gap-8">
+          <div className="flex flex-col items-center gap-1.5">
+            <div className="h-px w-32 bg-foreground/20"></div>
+            <div className="text-sm font-medium tracking-[0.3em] uppercase">Евгений Остапенко</div>
+            <div className="h-px w-20 bg-foreground/20"></div>
           </div>
-        </div>
-      </section>
-
-      <footer className="py-12 bg-primary text-white">
-        <div className="container">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="flex items-center space-x-2 mb-4 md:mb-0">
-              <Icon name="Aperture" size={32} />
-              <span className="font-heading text-xl font-bold">Евгений Остапенко</span>
-            </div>
-            <div className="flex space-x-6">
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <Icon name="Instagram" size={24} />
-              </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <Icon name="Youtube" size={24} />
-              </a>
-              <a href="#" className="hover:opacity-80 transition-opacity">
-                <Icon name="Mail" size={24} />
-              </a>
-            </div>
-          </div>
-          <div className="mt-8 pt-8 border-t border-white/20 text-center text-sm opacity-80">
-            © 2025 Евгений Остапенко. Фотограф и Видеограф в Санкт-Петербурге
+          <a
+            href="#"
+            className="text-xs font-bold tracking-[0.03em] uppercase hover:opacity-60 transition-opacity"
+          >
+            Правила студии
+          </a>
+          <div className="flex gap-6">
+            <Icon name="Instagram" size={20} className="cursor-pointer hover:opacity-60 transition-opacity" />
+            <Icon name="Youtube" size={20} className="cursor-pointer hover:opacity-60 transition-opacity" />
+            <Icon name="Mail" size={20} className="cursor-pointer hover:opacity-60 transition-opacity" />
           </div>
         </div>
       </footer>
